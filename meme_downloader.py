@@ -16,9 +16,16 @@ reddit = praw.Reddit(
     user_agent="WarHammer"
 )
 
+a =input("enter the name of the subreddit for example \"memes\": ")
+
+b = input("enter the number fo photos to download: ")
+
+b = int(b)
+
+
 # Fetch the top posts from r/memes
-subreddit = reddit.subreddit("bookmemes")
-top_posts = subreddit.top(limit=40)
+subreddit = reddit.subreddit(a)
+top_posts = subreddit.top(limit=b, time_filter="week")
 
 # Create a directory to save the downloaded memes
 if not os.path.exists("automated videos"):
