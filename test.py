@@ -14,14 +14,16 @@ def image_resizer(videoclip,image):
        # print("heigh is "+ image_h ", the wirth is "+ image_w)
         print("the height is", image.h ,", the wirthd is ", image.w)
 
-folder_path = "D:\Sarab youtube\\automated videos\\automated videos"
+folder_path = "C:\\Users\\sarab\\OneDrive\\Documents\\GitHub\\WarHammer\\automated videos"
+video_directory = "D:\\Study\\python project"
 
 for file in os.listdir(folder_path):
     if file.endswith(".png") or file.endswith(".jpg"):
         a = random.randint(1,50)
         print("progran has started")
+        video_file_path = os.path.join(video_directory, "parkour.mp4")
 
-        clip = VideoFileClip("parkour.mp4").subclip(a,a+4) # choosing a radom 4 second portion from the input video
+        clip = VideoFileClip(video_directory).subclip(a,a+4) # choosing a radom 4 second portion from the input video
         image = ImageClip(file)
         image = image.set_duration(clip.duration)
 
